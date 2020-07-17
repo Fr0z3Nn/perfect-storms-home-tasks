@@ -9,4 +9,5 @@ public class ByteDataType {
        int y = 127;
        byte z = (byte) (x - y);
     }
+    // byte data type stores the numbers of range -128 to 127, it takes 1 byte.
 }
