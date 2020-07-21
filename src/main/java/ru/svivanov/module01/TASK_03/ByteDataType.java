@@ -7,7 +7,7 @@ public class ByteDataType {
     public static void main(String[] args) {
        byte x = 127;
        byte y = (byte)255; // -1
-       System.out.println((byte)(x-y)); // 127-(-1)=128 to byte => -128
+       System.out.println((byte)(x-y)); // 127-(-1)==128 to byte => -128
     }
     // byte data type stores the numbers of range -128 to 127, it takes 1 byte.
 }
