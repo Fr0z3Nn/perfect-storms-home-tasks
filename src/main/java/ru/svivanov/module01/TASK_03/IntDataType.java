@@ -10,4 +10,9 @@ public class IntDataType {
         System.out.println((int)Math.pow(x,3));
     }
     // int data type stores the numbers of range -2147483648 to 2147483647, it takes 4 byte.
+    public void difference(){
+        Integer i = 20; //heap - 20 stack-i
+        int j = 10; //stack - 10;
+        //reference data type have methods and should be compared by equals not ==
+    }
 }
