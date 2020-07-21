@@ -1,9 +1,5 @@
 package ru.svivanov.module01.TASK_03;
 
-import org.glowroot.instrumentation.api.Logger;
-
-import java.lang.instrument.*;
-
 public class IntDataType {
 
 
