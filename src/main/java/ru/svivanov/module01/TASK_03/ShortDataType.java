@@ -7,7 +7,7 @@ public class ShortDataType {
     public static void main(String[] args) {
         short x = -32768;
         short y = (short)32768;//-32768
-        System.out.println((byte)(x-y)); //-32768-(-32768)==0
+        System.out.println((short)(x-y)); //-32768+(-32768)==0
     }
     // short data type stores the numbers of range -32768 to 32767, it takes 2 byte.
 }
