@@ -5,9 +5,9 @@ public class ByteDataType {
     // and then the third variable will receive a value equal to the substraction of the values ​​of the two variables.
     // The result should be with a byte data type.
     public static void main(String[] args) {
-       int x = 255;
-       int y = 127;
-       byte z = (byte) (x - y);
+       byte x = 127;
+       byte y = (byte)255; // -1
+       System.out.println((byte)(x-y)); // 127-(-1)=128 to byte => -128
     }
     // byte data type stores the numbers of range -128 to 127, it takes 1 byte.
 }
