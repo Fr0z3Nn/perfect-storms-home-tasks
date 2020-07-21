@@ -25,6 +25,5 @@ public class MathOperators {
                 "e = %d\n" +
                 "f = %d\n" +
                 "i = %d\n",a,b,c,d,e,f,i);
-
     }
 }
