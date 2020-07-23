@@ -1,7 +1,8 @@
 package ru.svivanov.module01.TASK_05;
 
 import java.util.stream.IntStream;
-
+//TODO There are 3 numbers: 34, 2, 78 (type int). Compare them using "if - else -if" statement.
+// Find the maximum and find the minimum.
 public class IfElseIfStatement {
     private static void streamMinMax(int A, int B, int C){
         System.out.printf("MIN = %s\n", IntStream.of(A,B,C).min().getAsInt());
