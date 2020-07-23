@@ -1,3 +1,4 @@
+//TODO What will be displayed on the console as a result?
 int c = 3, d = 2;
 
 if (c = d++) {
