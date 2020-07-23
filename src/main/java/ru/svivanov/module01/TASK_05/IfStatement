@@ -1,3 +1,4 @@
+   //TODO What will be displayed on the console as a result?
     int a = 7;
     int b = --a;
 
