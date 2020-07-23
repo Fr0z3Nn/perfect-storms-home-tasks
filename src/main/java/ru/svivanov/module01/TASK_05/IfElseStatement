@@ -9,3 +9,4 @@ if (c = d++) {
 ____________________________________________________
 
 if (c = d++) error in if statement. May be c == d++?
+= isn't comparison operator.
