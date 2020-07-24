@@ -17,8 +17,8 @@ public class Task_04 {
             swap(array2, -2, 0);
         }
 
-
-        private static void swap ( int[] array, int indexA, int indexB){
+    @ SuppressWarnings("all")
+    private static void swap ( int[] array, int indexA, int indexB){
             int len = array.length -  1;
             System.out.println("Trying swap: " + Arrays.toString(array) + " indices " + indexA + " and " + indexB);
 
