@@ -26,8 +26,10 @@ public class Movie {
     }
 
     public static void printMovies(){
-        for(int i=0; !Arrays.equals(MovieList[i],EmptyList);i++){
-            System.out.println(Arrays.toString(MovieList[i]));
+        for(int i=0; i < MovieList.length; i++){
+            if (!Arrays.equals(MovieList[i],EmptyList)){
+                System.out.println(Arrays.toString(MovieList[i]));
+            }
         }
     }
 }
