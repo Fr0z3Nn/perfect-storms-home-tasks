@@ -14,9 +14,15 @@ public class Main {
         while (true){
             Structure.showMenu();
             if(scanner.hasNextInt()){
-                UserChoice.choice(scanner.nextInt());
+                int num = scanner.nextInt();
+                if(num > 0 && num < 8){
+                    UserChoice.choice(num);
+                }else{
+                    System.out.println("Enter the correct number in the range from 1 to 7");
+                    scanner.nextLine();
+                }
             }else{
-                System.out.println("Please input correct number");
+                System.out.println("Enter a number. Your data is not a number");
                 scanner.nextLine();
             }
 
