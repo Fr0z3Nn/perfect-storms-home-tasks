@@ -19,7 +19,6 @@ public class Main {
                     UserChoice.choice(num);
                 }else{
                     System.out.println("Enter the correct number in the range from 1 to 7");
-                    scanner.nextLine();
                 }
             }else{
                 System.out.println("Enter a number. Your data is not a number");
