@@ -32,4 +32,14 @@ public class Movie {
             }
         }
     }
+
+    public static void checkMovie(byte[] movie){
+        boolean isListContainMovie = false;
+        for (int i=0; i < MovieList.length; i++){
+            if (Arrays.equals(MovieList[i],movie)){
+                isListContainMovie = true;
+            }
+        }
+        System.out.println(isListContainMovie ? "Данный фильм есть в базе" : "Данного фильма нет в базе");
+    }
 }
