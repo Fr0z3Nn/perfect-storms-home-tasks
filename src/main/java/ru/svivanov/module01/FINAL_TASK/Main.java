@@ -13,7 +13,13 @@ public class Main {
 
         while (true){
             Structure.showMenu();
-            UserChoice.choice(scanner.nextInt());
+            if(scanner.hasNextInt()){
+                UserChoice.choice(scanner.nextInt());
+            }else{
+                System.out.println("Please input correct number");
+                scanner.nextLine();
+            }
+
         }
     }
 }
