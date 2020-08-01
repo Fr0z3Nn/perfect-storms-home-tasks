@@ -41,9 +41,6 @@ public class UserChoice {
                 continueOrGoBackToTheMainMenu("Add one more movie name.", 1);
                 break;
 
-
-
-
             case 2:
                 System.out.println("Write the name of the movie to remove and press Enter");
                 response = Movie.remove(scanner.nextLine().toLowerCase().getBytes());
@@ -51,14 +48,12 @@ public class UserChoice {
                 continueOrGoBackToTheMainMenu("Remove one more movie name.", 2);
                 break;
 
-
             case 3:
                 System.out.println("Write the name of the movie to edit and press Enter");
                 response = Movie.edit(scanner.nextLine().toLowerCase().getBytes());
                 System.out.println(response ? "The movie was edited successfully" : "This movie is not in the list");
                 continueOrGoBackToTheMainMenu("Edit one more movie name.", 3);
                 break;
-
 
             case 4:
                 Movie.print();

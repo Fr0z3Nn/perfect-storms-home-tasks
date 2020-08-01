@@ -9,7 +9,8 @@ public class Structure {
                 "Instruction manual:\n" +
                 "1. Navigate through the menu items by entering numbers [1-7].\n" +
                 "2. This program can store up to 100 movies.\n" +
-                "\n" +
+                "3. You can reserve one place for a movie by adding an empty movie. (When entering a movie, press enter)\n" +
+                "\n Developer: Fr0z3Nn\n"+
                 "PRESS ENTER to continue...");
         scanner.nextLine();
     }
