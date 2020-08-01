@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Structure {
     public static void instruction(){
         Scanner scanner = new Scanner(System.in);
+        //INSTRUCTION
         System.out.println("WELCOME TO THE MOVIE LIST PROGRAM.\n" +
                 "Instruction manual:\n" +
                 "1. Navigate through the menu items by entering numbers [1-7].\n" +
@@ -14,6 +15,10 @@ public class Structure {
                 "PRESS ENTER to continue...");
         scanner.nextLine();
     }
+
+    /**
+     * Method which show MainMenu
+     */
     public static void showMenu(){
         String[] menuItemForShow = {
                 "       ACTION LIST",
