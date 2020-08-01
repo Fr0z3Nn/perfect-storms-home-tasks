@@ -74,6 +74,13 @@ public class UserChoice {
                 scanner.nextLine();
                 break;
 
+            case 6:
+                Movie.sort();
+                System.out.println("Sorting was successful\n" +
+                        "Press Enter to return back");
+                scanner.nextLine();
+                break;
+
             case 7:
                 System.exit(0);
         }
