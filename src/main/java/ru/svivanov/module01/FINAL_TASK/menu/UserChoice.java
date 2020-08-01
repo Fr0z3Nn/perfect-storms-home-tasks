@@ -3,8 +3,33 @@ package ru.svivanov.module01.FINAL_TASK.menu;
 import java.util.Scanner;
 
 public class UserChoice {
+    private static Scanner scanner = new Scanner(System.in);
+
+    private static void continueOrGoBackToTheMainMenu(String firstPoint, int deepChoice){
+        while (true){
+            System.out.println(
+                    "1. "+firstPoint+"\n" +
+                            "2. Back to the main menu.");
+
+            if(scanner.hasNextInt()){
+                int continueOrBrake = scanner.nextInt();
+                if (continueOrBrake == 1){
+                    scanner.nextLine();
+                    choice(deepChoice);
+                    break;
+                }
+                if (continueOrBrake == 2){
+                    scanner.nextLine();
+                    break;
+                }
+            }
+            scanner.nextLine();
+            System.out.println("Enter the number [1] or press enter to exit");
+        }
+
+    }
+
     public static void choice(int num){
-        Scanner scanner = new Scanner(System.in);
         int deepChoice;
         boolean response;
         switch (num){
@@ -13,45 +38,33 @@ public class UserChoice {
                 System.out.println("Write the name of the movie to add and press Enter");
                 response = Movie.add(scanner.nextLine().toLowerCase().getBytes());
                 System.out.println(response ? "The movie was added successfully" : "This movie is already in the list");
-                System.out.println(
-                        "1. Add one more movie name.\n" +
-                        "2. Back to the main menu.");
-                deepChoice = scanner.nextInt();
-                if(deepChoice == 1){
-                    choice(1);
-                }
+                continueOrGoBackToTheMainMenu("Add one more movie name.", 1);
                 break;
+
+
+
 
             case 2:
                 System.out.println("Write the name of the movie to remove and press Enter");
                 response = Movie.remove(scanner.nextLine().toLowerCase().getBytes());
                 System.out.println(response ? "The movie was removed successfully" : "This movie is not in the list");
-                System.out.println(
-                        "1. Remove one more movie name.\n" +
-                        "2. Back to the main menu.");
-                deepChoice = scanner.nextInt();
-                if(deepChoice == 1){
-                    choice(2);
-                }
+                continueOrGoBackToTheMainMenu("Remove one more movie name.", 2);
                 break;
+
 
             case 3:
                 System.out.println("Write the name of the movie to edit and press Enter");
                 response = Movie.edit(scanner.nextLine().toLowerCase().getBytes());
                 System.out.println(response ? "The movie was edited successfully" : "This movie is not in the list");
-                System.out.println(
-                        "1. Edit one more movie name.\n" +
-                        "2. Back to the main menu.");
-                deepChoice = scanner.nextInt();
-                if(deepChoice == 1){
-                    choice(3);
-                }
+                continueOrGoBackToTheMainMenu("Edit one more movie name.", 3);
                 break;
+
 
             case 4:
                 Movie.print();
                 System.out.println("Press Enter to return back");
                 scanner.nextLine();
+                break;
 
             case 5:
                 System.out.println("Write the name of the movie to check it in MOVIE LIST");
@@ -59,6 +72,7 @@ public class UserChoice {
                 System.out.println(response ? "The movie is in MOVIE LIST" : "The movie is NOT in MOVIE LIST");
                 System.out.println("Press Enter to return back");
                 scanner.nextLine();
+                break;
 
             case 7:
                 System.exit(0);
