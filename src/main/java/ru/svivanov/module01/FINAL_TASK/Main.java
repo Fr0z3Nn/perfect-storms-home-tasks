@@ -7,14 +7,19 @@ import ru.svivanov.module01.FINAL_TASK.menu.UserChoice;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
+        Scanner scanner = new Scanner(System.in);
+        //output to display instruction when you first log in
         Structure.instruction();
 
+
         while (true){
+            //main menu
             Structure.showMenu();
+            //checking user input
             if(scanner.hasNextInt()){
                 int num = scanner.nextInt();
+                // menu have only [1-7]
                 if(num > 0 && num < 8){
                     UserChoice.choice(num);
                 }else{
