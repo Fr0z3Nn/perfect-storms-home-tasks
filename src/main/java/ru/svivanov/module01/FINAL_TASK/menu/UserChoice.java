@@ -7,25 +7,26 @@ public class UserChoice {
 
     /**
      * Method allows you to select continue or end and exit to the main menu.
+     *
      * @param firstPoint - String: the first menu item
-     * Example: Mokko
-     * Console output: 1. Mokko
+     *                   Example: Mokko
+     *                   Console output: 1. Mokko
      * @param deepChoice - int: the case number / menu item
      */
-    private static void continueOrGoBackToTheMainMenu(String firstPoint, int deepChoice){
-        while (true){
+    private static void continueOrGoBackToTheMainMenu(String firstPoint, int deepChoice) {
+        while (true) {
             System.out.println(
-                    "1. "+firstPoint+"\n" +
+                    "1. " + firstPoint + "\n" +
                             "2. Back to the main menu.");
             // check user input value
-            if(scanner.hasNextInt()){
+            if (scanner.hasNextInt()) {
                 int continueOrBrake = scanner.nextInt();
-                if (continueOrBrake == 1){
+                if (continueOrBrake == 1) {
                     scanner.nextLine();
                     choice(deepChoice);
                     break;
                 }
-                if (continueOrBrake == 2){
+                if (continueOrBrake == 2) {
                     scanner.nextLine();
                     break;
                 }
@@ -38,12 +39,13 @@ public class UserChoice {
 
     /**
      * Method that helps you navigate through the main menu
+     *
      * @param num - int: the case number / menu item
      */
-    public static void choice(int num){
+    public static void choice(int num) {
         //respone its return value which shows the success of the method execution
         boolean response;
-        switch (num){
+        switch (num) {
             //ADD
             case 1:
                 System.out.println("Write the name of the movie to add and press Enter");
