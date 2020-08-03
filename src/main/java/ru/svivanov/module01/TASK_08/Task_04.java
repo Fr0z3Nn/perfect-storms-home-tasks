@@ -12,7 +12,7 @@ public class Task_04 {
         if (num < 0) {
             return;
         }
-        System.out.println(num + " ");
+        System.out.println(num);
         recursionPrint(num - 1);
     }
 
