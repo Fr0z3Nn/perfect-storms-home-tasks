@@ -36,20 +36,34 @@ public class Tests {
 
     @Test
     public void personSort(){
+        Person p1 = new Person("Form", 27);
+        Person p2 = new Person("Brim", 17);
+        Person p3 = new Person("Arin", 32);
+        Person p4 = new Person("Tro", 9);
+        Person p5 = new Person("Limo", 61);
+        Person p6 = new Person("Miss", 36);
         Person[] personArray = new Person[6];
-        Person person = new Person("Form", 27);
-        personArray[0] = person;
-        personArray[1] = new Person("Brim", 17);
-        personArray[2] = new Person("Arin", 32);
-        personArray[3] = new Person("Tro", 9);
-        personArray[4] = new Person("Limo", 61);
-        personArray[5] = new Person("Miss", 36);
+        personArray[0] = p1;
+        personArray[1] = p2;
+        personArray[2] = p3;
+        personArray[3] = p4;
+        personArray[4] = p5;
+        personArray[5] = p6;
         System.out.println("Before sorting:");
         System.out.println(Arrays.toString(personArray));
-        person.sortByName(personArray);
+        Person[] exceptedSortByName = new Person[6];
+        exceptedSortByName[0] = p3;
+        exceptedSortByName[1] = p2;
+        exceptedSortByName[2] = p1;
+        exceptedSortByName[3] = p5;
+        exceptedSortByName[4] = p6;
+        exceptedSortByName[5] = p4;
+        Main.sortByName(personArray);
         System.out.println("Sorting by name:");
         System.out.println(Arrays.toString(personArray));
-        person.sortByAge(personArray);
+        Assert.assertEquals(personArray,exceptedSortByName);
+
+        Main.sortByAge(personArray);
         System.out.println("Sorting by age:");
         System.out.println(Arrays.toString(personArray));
 
