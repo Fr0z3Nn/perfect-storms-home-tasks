@@ -19,8 +19,7 @@ public class Cat {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", breed=" + breed +
-                ", owner=Person{name=" + '\'' + owner.getName() + "', " +
-                "age=" + owner.getAge()+
-                "}}";
+                ", owner=" + owner +
+                '}';
     }
 }

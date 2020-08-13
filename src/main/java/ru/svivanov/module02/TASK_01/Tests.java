@@ -51,21 +51,28 @@ public class Tests {
         personArray[5] = p6;
         System.out.println("Before sorting:");
         System.out.println(Arrays.toString(personArray));
-        Person[] exceptedSortByName = new Person[6];
-        exceptedSortByName[0] = p3;
-        exceptedSortByName[1] = p2;
-        exceptedSortByName[2] = p1;
-        exceptedSortByName[3] = p5;
-        exceptedSortByName[4] = p6;
-        exceptedSortByName[5] = p4;
+        Person[] expectedSortByName = new Person[6];
+        expectedSortByName[0] = p3;
+        expectedSortByName[1] = p2;
+        expectedSortByName[2] = p1;
+        expectedSortByName[3] = p5;
+        expectedSortByName[4] = p6;
+        expectedSortByName[5] = p4;
         Main.sortByName(personArray);
         System.out.println("Sorting by name:");
         System.out.println(Arrays.toString(personArray));
-        Assert.assertEquals(personArray,exceptedSortByName);
-
+        Assert.assertArrayEquals(personArray,expectedSortByName);
+        Person[] expectedSortByAge = new Person[6];
+        expectedSortByAge[0] = p4;
+        expectedSortByAge[1] = p2;
+        expectedSortByAge[2] = p1;
+        expectedSortByAge[3] = p3;
+        expectedSortByAge[4] = p6;
+        expectedSortByAge[5] = p5;
         Main.sortByAge(personArray);
         System.out.println("Sorting by age:");
         System.out.println(Arrays.toString(personArray));
+        Assert.assertArrayEquals(personArray,expectedSortByAge);
 
     }
 }
