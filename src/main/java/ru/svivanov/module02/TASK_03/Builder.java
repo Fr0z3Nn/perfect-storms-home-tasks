@@ -1,6 +1,6 @@
 package ru.svivanov.module02.TASK_03;
 
-public class Builder extends AbstractClass {
+public class Builder extends AbstractClass implements Strongman{
 
     public Builder(String name, int age) {
         super(name, age);
@@ -13,5 +13,10 @@ public class Builder extends AbstractClass {
 
     public void heal(){
         System.out.println("Builds");
+    }
+
+    @Override
+    public void drag() {
+        System.out.println("Drags");
     }
 }

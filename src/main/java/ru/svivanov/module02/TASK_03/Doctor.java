@@ -1,6 +1,6 @@
 package ru.svivanov.module02.TASK_03;
 
-public class Doctor extends AbstractClass{
+public class Doctor extends AbstractClass implements Intellectual{
 
     public Doctor(String name, int age) {
         super(name, age);
@@ -13,5 +13,10 @@ public class Doctor extends AbstractClass{
 
     public void heal(){
         System.out.println("Heals");
+    }
+
+    @Override
+    public void think() {
+        System.out.println("Thinks");
     }
 }
