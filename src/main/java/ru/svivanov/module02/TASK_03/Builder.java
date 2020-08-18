@@ -11,7 +11,7 @@ public class Builder extends AbstractClass implements Strongman{
         System.out.println("Builder");
     }
 
-    public void heal(){
+    public void builder(){
         System.out.println("Builds");
     }
 

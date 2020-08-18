@@ -11,7 +11,7 @@ public class Programmer extends AbstractClass implements Intellectual{
         System.out.println("Programmer");
     }
 
-    public void heal(){
+    public void programming(){
         System.out.println("Programming");
     }
 
