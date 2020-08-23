@@ -5,6 +5,13 @@ public class PrivateClass {
     private int age;
     private String address;
 
+    public static int count;
+
+    public PrivateClass() {
+        count++;
+    }
+
+
     public String getName() {
         return name;
     }
