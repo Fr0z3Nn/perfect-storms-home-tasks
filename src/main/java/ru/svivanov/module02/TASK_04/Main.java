@@ -9,5 +9,9 @@ public class Main {
         PrivateClass p5 = new PrivateClass();
         PrivateClass p6 = new PrivateClass();
         System.out.println(PrivateClass.count);
+
+        Lion lion  = new Lion("Mass");
+        lion.setName("Tron");
+        System.out.println(lion.getName());
     }
 }
