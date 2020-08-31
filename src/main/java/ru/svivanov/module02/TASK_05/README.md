@@ -24,7 +24,7 @@
 **ANSWER:** this command shows what has changed since our last commit
 ***
 **QUESTION:** What is **"git checkout"**? How this command can be used?  
-**ANSWER:** allows you to switch between branches. **git checkout -b** creates a new branch
+**ANSWER:** allows you to switch between branches and work with commits. **git checkout -b** creates a new branch
 ***
 **QUESTION:** What is **"git push"**?   
 **ANSWER:** the git push command tells Git where to send our changes when everything is ready.
@@ -37,7 +37,7 @@ allows you to take changes from the branch and merge them with the active branch
 **ANSWER:** my current branch
 ***
 **QUESTION:** Okay, answer what **"git merge"** will give you and let's finish with that.  
-**ANSWER:** allows you to merge branches
+**ANSWER:** allows you to merge branches and pull from localrepo.
 ***
 
 
