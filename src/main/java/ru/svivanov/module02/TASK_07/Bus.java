@@ -8,7 +8,6 @@ public abstract class Bus extends Car{
         this.numberSeats = numberSeats;
     }
 
-
     public int getNumberSeats() {
         return numberSeats;
     }
