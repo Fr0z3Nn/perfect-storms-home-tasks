@@ -22,7 +22,7 @@ public class Programmer {
         } else if (len < 9) {
             return res += "Serious, establish surveillance!";
         } else if (len < 13) {
-            return  res += "Dangerous, send Smith to him!";
+            return res += "Dangerous, send Smith to him!";
         } else {
             return res += "He is the chosen one...";
         }
