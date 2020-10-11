@@ -11,8 +11,12 @@ public class PawnBlack extends Figure {
     }
 
     @Override
-    public Cell[] way(Cell source, Cell dest) {
-        return new Cell[0];
+    public boolean way(Cell source, Cell dest) {
+        Cell[] ways = new Cell[2];
+        if(source.y == 1 && (dest.y == 2 || dest.y == 3) && source.x == dest.x){
+            return true;
+        }
+        return false;
     }
 
     @Override

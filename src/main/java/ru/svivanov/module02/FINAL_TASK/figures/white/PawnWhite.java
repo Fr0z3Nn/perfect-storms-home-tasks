@@ -10,9 +10,10 @@ public class PawnWhite extends Figure {
     }
 
     @Override
-    public Cell[] way(Cell source, Cell dest) {
-        return new Cell[0];
+    public boolean way(Cell source, Cell dest) {
+        return false;
     }
+
 
     @Override
     public FigureLogic copy(Cell dest) {

@@ -66,13 +66,15 @@ public class MainChess extends Application {
             rect.setX(event.getX() - size / 2);
             rect.setY(event.getY() - size / 2);
         });
+        // replace
         rect.setOnMouseReleased(event -> {
             if (logic.move(this.findBy(momento.getX(), momento.getY()), this.findBy(event.getX(), event.getY()))) {
-                rect.setX((int)( momento.getX() / 40) * 40 + 5);
-                rect.setY((int)( momento.getY() / 40) * 40 + 5);
-            } else {
                 rect.setX((int)(event.getX() / 40) * 40 + 5);
                 rect.setY((int)(event.getY() / 40) * 40 + 5);
+            } else {
+                rect.setX((int)( momento.getX() / 40) * 40 + 5);
+                rect.setY((int)( momento.getY() / 40) * 40 + 5);
+
             }
         });
 

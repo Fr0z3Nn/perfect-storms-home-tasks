@@ -16,7 +16,7 @@ public abstract class Figure implements FigureLogic {
     }
 
     @Override
-    public abstract Cell[] way(Cell source, Cell dest);
+    public abstract boolean way(Cell source, Cell dest);
 
     @Override
     public abstract FigureLogic copy(Cell dest);
