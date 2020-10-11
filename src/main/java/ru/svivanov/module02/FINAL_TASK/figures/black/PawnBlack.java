@@ -12,9 +12,8 @@ public class PawnBlack extends Figure {
 
     @Override
     public boolean way(Cell source, Cell dest) {
-        if(source.y == 1 && (dest.y == 2 || dest.y == 3) && source.x == dest.x){
-            return true;
-        }
+        if(source.y == 1 && (dest.y == 2 || dest.y == 3) && source.x == dest.x) return true;
+        if(source.y + 1 == dest.y && source.x == dest.x) return true;
         return false;
     }
 

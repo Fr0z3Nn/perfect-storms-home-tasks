@@ -58,6 +58,10 @@ public class MainChess extends Application {
         Image img = new Image(this.getClass().getClassLoader().getResource(image).toString());
         rect.setFill(new ImagePattern(img));
         final Rectangle momento = new Rectangle(x, y);
+        rect.setOnScroll(event -> {
+            rect.setX(250);
+            rect.setY(-50);
+        });
         rect.setOnDragDetected(event -> {
             momento.setX(event.getX());
             momento.setY(event.getY());
@@ -117,12 +121,12 @@ public class MainChess extends Application {
         this.add(new PawnBlack(Cell.G2), grid);
         this.add(new PawnBlack(Cell.H2), grid);
         this.add(new RookBlack(Cell.A1),grid);
-        this.add(new BishopBlack(Cell.B1),grid);
-        this.add(new KnightBlack(Cell.C1),grid);
+        this.add(new KnightBlack(Cell.B1),grid);
+        this.add(new BishopBlack(Cell.C1),grid);
         this.add(new QueenBlack(Cell.D1),grid);
         this.add(new KingBlack(Cell.E1),grid);
-        this.add(new KnightBlack(Cell.F1),grid);
-        this.add(new BishopBlack(Cell.G1),grid);
+        this.add(new BishopBlack(Cell.F1),grid);
+        this.add(new KnightBlack(Cell.G1),grid);
         this.add(new RookBlack(Cell.H1),grid);
     }
 
@@ -136,12 +140,12 @@ public class MainChess extends Application {
         this.add(new PawnWhite(Cell.G7),grid);
         this.add(new PawnWhite(Cell.H7),grid);
         this.add(new RookWhite(Cell.A8),grid);
-        this.add(new BishopWhite(Cell.B8),grid);
-        this.add(new KnightWhite(Cell.C8),grid);
-        this.add(new KingWhite(Cell.D8),grid);
-        this.add(new QueenWhite(Cell.E8),grid);
-        this.add(new KnightWhite(Cell.F8),grid);
-        this.add(new BishopWhite(Cell.G8),grid);
+        this.add(new KnightWhite(Cell.B8),grid);
+        this.add(new BishopWhite(Cell.C8),grid);
+        this.add(new QueenWhite(Cell.D8),grid);
+        this.add(new KingWhite(Cell.E8),grid);
+        this.add(new BishopWhite(Cell.F8),grid);
+        this.add(new KnightWhite(Cell.G8),grid);
         this.add(new RookWhite(Cell.H8),grid);
     }
 
@@ -171,7 +175,7 @@ public class MainChess extends Application {
         control.getChildren().addAll(start);
         border.setBottom(control);
         border.setCenter(this.buildGrid());
-        stage.setScene(new Scene(border,400,400));
+        stage.setScene(new Scene(border,500,500));
         stage.setTitle(appName);
         stage.setResizable(false);
         stage.show();
