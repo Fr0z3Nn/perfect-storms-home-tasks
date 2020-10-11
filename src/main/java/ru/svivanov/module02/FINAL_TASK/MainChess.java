@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 import ru.svivanov.module02.FINAL_TASK.figures.black.*;
 import ru.svivanov.module02.FINAL_TASK.figures.white.*;
 import ru.svivanov.module02.FINAL_TASK.logic.Cell;
-import ru.svivanov.module02.FINAL_TASK.logic.Figure;
+import ru.svivanov.module02.FINAL_TASK.logic.FigureLogic;
 import ru.svivanov.module02.FINAL_TASK.logic.Logic;
 
 
@@ -39,23 +39,25 @@ public class MainChess extends Application {
         return rect;
     }
 
-    private void refresh(final BorderPane border) {
+    private void refresh(BorderPane border) {
         Group grid = this.buildGrid();
         this.logic.clean();
         this.buildWhiteTeam(grid);
         this.buildBlackTeam(grid);
+        border.setCenter(grid);
+
 
     }
 
-    private Rectangle buildFigure(int x, int y, int size, String image){
+    private Rectangle buildFigure(int x, int y, int size, String image) {
         Rectangle rect = new Rectangle();
-        rect.setX(x * size);
-        rect.setY(y * size);
+        rect.setX(x);
+        rect.setY(y);
         rect.setHeight(size);
         rect.setWidth(size);
         Image img = new Image(this.getClass().getClassLoader().getResource(image).toString());
         rect.setFill(new ImagePattern(img));
-        final Rectangle momento = new Rectangle(x,y);
+        final Rectangle momento = new Rectangle(x, y);
         rect.setOnDragDetected(event -> {
             momento.setX(event.getX());
             momento.setY(event.getY());
@@ -65,17 +67,20 @@ public class MainChess extends Application {
             rect.setY(event.getY() - size / 2);
         });
         rect.setOnMouseReleased(event -> {
-            if(logic.move(this.findBy(momento.getX(),momento.getY()),this.findBy(event.getX(),event.getY()))){
-                rect.setX(((int) event.getX() / 40) * 40 + 5);
-                rect.setY(((int) event.getY() / 40) * 40 + 5);
-            }else{
-                rect.setX(((int) momento.getX() / 40) * 40 + 5);
-                rect.setY(((int) momento.getY() / 40) * 40 + 5);            }
+            if (logic.move(this.findBy(momento.getX(), momento.getY()), this.findBy(event.getX(), event.getY()))) {
+                rect.setX((int)( momento.getX() / 40) * 40 + 5);
+                rect.setY((int)( momento.getY() / 40) * 40 + 5);
+            } else {
+                rect.setX((int)(event.getX() / 40) * 40 + 5);
+                rect.setY((int)(event.getY() / 40) * 40 + 5);
+            }
         });
+
         return rect;
+
     }
 
-    public void add(Figure figure, Group grid) {
+    public void add(FigureLogic figure, Group grid) {
         this.logic.add(figure);
         Cell position = figure.position();
         grid.getChildren().add(
@@ -101,40 +106,41 @@ public class MainChess extends Application {
     }
 
     private void buildBlackTeam(Group grid) {
-        this.add(new PawnBlack(Cell.A2),grid);
-        this.add(new PawnBlack(Cell.B2),grid);
-        this.add(new PawnBlack(Cell.C2),grid);
-        this.add(new PawnBlack(Cell.D2),grid);
-        this.add(new PawnBlack(Cell.E2),grid);
-        this.add(new PawnBlack(Cell.F2),grid);
-        this.add(new PawnBlack(Cell.G2),grid);
-        this.add(new PawnBlack(Cell.H2),grid);
-        /*this.add(new RookBlack(Cell.A1),grid);
+        this.add(new PawnBlack(Cell.A2), grid);
+        this.add(new PawnBlack(Cell.B2), grid);
+        this.add(new PawnBlack(Cell.C2), grid);
+        this.add(new PawnBlack(Cell.D2), grid);
+        this.add(new PawnBlack(Cell.E2), grid);
+        this.add(new PawnBlack(Cell.F2), grid);
+        this.add(new PawnBlack(Cell.G2), grid);
+        this.add(new PawnBlack(Cell.H2), grid);
+        this.add(new RookBlack(Cell.A1),grid);
         this.add(new BishopBlack(Cell.B1),grid);
         this.add(new KnightBlack(Cell.C1),grid);
-        this.add(new QeenBlack(Cell.D1),grid);
+        this.add(new QueenBlack(Cell.D1),grid);
         this.add(new KingBlack(Cell.E1),grid);
         this.add(new KnightBlack(Cell.F1),grid);
         this.add(new BishopBlack(Cell.G1),grid);
-        this.add(new RookBlack(Cell.H1),grid);*/
+        this.add(new RookBlack(Cell.H1),grid);
     }
 
     private void buildWhiteTeam(Group grid) {
-        /*this.add(new PawnWhite(Cell.A2),grid);
-        this.add(new PawnWhite(Cell.B2),grid);
-        this.add(new PawnWhite(Cell.D2),grid);
-        this.add(new PawnWhite(Cell.E2),grid);
-        this.add(new PawnWhite(Cell.F2),grid);
-        this.add(new PawnWhite(Cell.G2),grid);
-        this.add(new PawnWhite(Cell.H2),grid);
-        this.add(new RookWhite(Cell.A1),grid);
-        this.add(new BishopWhite(Cell.B1),grid);
-        this.add(new KnightWhite(Cell.C1),grid);
-        this.add(new QeenWhite(Cell.D1),grid);
-        this.add(new KingWhite(Cell.E1),grid);
-        this.add(new KnightWhite(Cell.F1),grid);
-        this.add(new BishopWhite(Cell.G1),grid);
-        this.add(new RookWhite(Cell.H1),grid);*/
+        this.add(new PawnWhite(Cell.A7),grid);
+        this.add(new PawnWhite(Cell.B7),grid);
+        this.add(new PawnWhite(Cell.D7),grid);
+        this.add(new PawnWhite(Cell.C7),grid);
+        this.add(new PawnWhite(Cell.E7),grid);
+        this.add(new PawnWhite(Cell.F7),grid);
+        this.add(new PawnWhite(Cell.G7),grid);
+        this.add(new PawnWhite(Cell.H7),grid);
+        this.add(new RookWhite(Cell.A8),grid);
+        this.add(new BishopWhite(Cell.B8),grid);
+        this.add(new KnightWhite(Cell.C8),grid);
+        this.add(new KingWhite(Cell.D8),grid);
+        this.add(new QueenWhite(Cell.E8),grid);
+        this.add(new KnightWhite(Cell.F8),grid);
+        this.add(new BishopWhite(Cell.G8),grid);
+        this.add(new RookWhite(Cell.H8),grid);
     }
 
     private Group buildGrid() {
@@ -155,9 +161,11 @@ public class MainChess extends Application {
         HBox control = new HBox();
         control.setPrefHeight(40);
         control.setSpacing(10);
-        control.setAlignment(Pos.BOTTOM_CENTER);
+        control.setAlignment(Pos.BASELINE_CENTER);
         Button start = new Button("ПОЕХАЛИ!");
-        start.setOnMouseClicked(event -> {this.refresh(border);});
+        start.setOnMouseClicked(event -> {
+            this.refresh(border);
+        });
         control.getChildren().addAll(start);
         border.setBottom(control);
         border.setCenter(this.buildGrid());
@@ -165,6 +173,6 @@ public class MainChess extends Application {
         stage.setTitle(appName);
         stage.setResizable(false);
         stage.show();
-        //this.refresh(border);
+        //his.refresh(border);
     }
 }
