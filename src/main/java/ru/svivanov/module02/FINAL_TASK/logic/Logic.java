@@ -1,9 +1,11 @@
 package ru.svivanov.module02.FINAL_TASK.logic;
 
+import java.util.Arrays;
+
 public class Logic {
-    private final Figure[] figures = new Figure[32];
+    private final FigureLogic[] figures = new FigureLogic[32];
     private int index = 0;
-    public void add(Figure figure){
+    public void add(FigureLogic figure){
         this.figures[this.index++] = figure;
     }
 
@@ -32,9 +34,7 @@ public class Logic {
     }
 
     public void clean() {
-        for (int position = 0; position != this.figures.length; position++){
-            this.figures[position] = null;
-        }
+        Arrays.fill(this.figures, null);
         this.index = 0;
     }
 

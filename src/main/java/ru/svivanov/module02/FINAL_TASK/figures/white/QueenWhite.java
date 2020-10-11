@@ -4,8 +4,8 @@ import ru.svivanov.module02.FINAL_TASK.figures.Figure;
 import ru.svivanov.module02.FINAL_TASK.logic.Cell;
 import ru.svivanov.module02.FINAL_TASK.logic.FigureLogic;
 
-public class KingWhite extends Figure {
-    public KingWhite(Cell position) {
+public class QueenWhite extends Figure {
+    public QueenWhite(Cell position) {
         super(position);
     }
 
@@ -16,6 +16,6 @@ public class KingWhite extends Figure {
 
     @Override
     public FigureLogic copy(Cell dest) {
-        return new KingWhite(dest);
+        return new QueenWhite(dest);
     }
 }
