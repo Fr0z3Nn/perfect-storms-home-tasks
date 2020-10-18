@@ -22,7 +22,7 @@ public class Armstrong {
         System.out.println("time = " + (b - a) / 1000);
 
         a = System.currentTimeMillis();
-        getNumbers(9_223_372_036_854_775_807L);
+        getNumbers(100_000_000L);
         b = System.currentTimeMillis();
         System.out.println("memory " + (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1048576);
         System.out.println("time = " + (b - a) / 1000);
