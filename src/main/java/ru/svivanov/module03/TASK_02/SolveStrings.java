@@ -11,6 +11,7 @@ public class SolveStrings {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
+
         IntStream.range(0, 5).forEach(n -> {
             list.add(scan.nextLine());
         });
