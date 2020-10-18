@@ -28,3 +28,4 @@ public class Armstrong {
         System.out.println("time = " + (b - a) / 1000);
     }
 }
+
